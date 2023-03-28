@@ -1,8 +1,8 @@
 import express from "express";
 import { body } from "express-validator";
-import { useRegister, userSignIn } from "../controllers/user";
-import { tokenAuth } from "../middleware/token";
-import { validate } from "../utils/validator";
+import { useRegister, userSignIn } from "../controllers/user.js";
+import { tokenAuth } from "../middleware/token.js";
+import { validate } from "../utils/validator.js";
 
 const router = express.Router();
 

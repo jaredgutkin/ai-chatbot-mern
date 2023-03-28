@@ -30,7 +30,7 @@ export const userSignIn = async (req, res) => {
     try {
         const { username, password } = req.body;
 
-        const user = await User.findOne({ usename }).select("username password salt id");
+        const user = await User.findOne({ username }).select("username password salt id");
 
         if (!user) return res.status(400).json({
             message: "User Not Found"
