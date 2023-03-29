@@ -2,7 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userCheckTkn } from "../api/UserApi.js";
-import Loading from "./Loading,jsx";
+import Loading from "./Loading.jsx";
 import Header from "./Header.jsx";
 
 const AuthRoute = (props) => {
@@ -29,24 +29,34 @@ const AuthRoute = (props) => {
         if (tkn) checkToken();
         else setIsLoading(false);
     }, [navigate]);
-    
+
   return (
     isLoading ? (
         <Loading />
     ) : (
-        <Container>
+        <Container
+            component="main"
+            maxWidth="md"
+            sx={{
+                height: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                alignItems: "center"
+            }}
+        >
             <Header>
-                <Typography>
+                <Typography variant="h5" fontWeight="600">
                     AI Chat
                 </Typography>
             </Header>
 
-            <Box>
+            <Box width="100%">
                 {props.children}
             </Box>
 
-            <Box>
-                <Typography>
+            <Box padding={2}>
+                <Typography variant="caption" color="primary">
                     MiMi
                 </Typography>
             </Box>
