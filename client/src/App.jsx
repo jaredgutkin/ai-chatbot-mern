@@ -17,27 +17,25 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ToastContainer
-          position="bottom-left"
-          autoClose={4000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnHover
-         />
-
-         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={
-              <ProtectedRoute>
-                <HomePage />
-              </ProtectedRoute>
-            } />
-                      <Route path="/signin" element={
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnHover
+      />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          } />
+          <Route path="/signin" element={
             <AuthRoute>
               <SignInPage />
             </AuthRoute>
@@ -47,12 +45,11 @@ function App() {
               <SignUpPage />
             </AuthRoute>
           } />
-
-          </Routes>
-         </BrowserRouter>
-        </ThemeProvider>
-    </div>
-  )
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
+

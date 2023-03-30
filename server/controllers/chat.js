@@ -10,7 +10,7 @@ export const chatCompletion = async (req, res) => {
     try {
         const { prompt } = req.body;
 
-        const answer = await OpenAIApi.createCompletion({
+        const answer = await openai.createCompletion({
             model: "text-davinci-003",
             prompt: prompt,
             temperature: 0,

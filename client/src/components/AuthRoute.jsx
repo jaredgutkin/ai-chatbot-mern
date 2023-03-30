@@ -65,4 +65,4 @@ const AuthRoute = (props) => {
   )
 }
 
-export default AuthRoute
+export default AuthRoute;

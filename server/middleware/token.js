@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
-const tokenDecode = () => {
+const tokenDecode = (req) => {
     try {
         const bearer = req.headers["authorization"];
 
@@ -11,9 +11,9 @@ const tokenDecode = () => {
             return jwt.verify(token, process.env.TOKEN_SECRET);
         }
 
-    } catch { 
         return false;
-    }
+
+    } catch { return false;}
 };
 
 export const tokenAuth = async (req, res, next) => {

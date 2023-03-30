@@ -1,6 +1,6 @@
 import express from "express";
 import { body } from "express-validator";
-import { useRegister, userSignIn } from "../controllers/user.js";
+import { userRegister, userSignIn } from "../controllers/user.js";
 import { tokenAuth } from "../middleware/token.js";
 import { validate } from "../utils/validator.js";
 
@@ -16,7 +16,7 @@ router.post(
         .exists().withMessage("password is required")
         .isLength({ min: 8}).withMessage("password must be at least 8 characters"),
     validate,
-    useRegister
+    userRegister
 );
 
 router.post(

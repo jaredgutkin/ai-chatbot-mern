@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
-export const useRegister = async (req, res) => {
+export const userRegister = async (req, res) => {
     try {
         const { username, password } = req.body;
 

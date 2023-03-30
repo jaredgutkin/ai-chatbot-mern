@@ -34,7 +34,7 @@ export const userSignIn = async ({
 
 export const userCheckTkn = async () => {
     try {
-        const reponse = await axiosClient.get("users/check-token");
+        const response = await axiosClient.get("users/check-token");
 
         return { response };
     } catch (err) {
